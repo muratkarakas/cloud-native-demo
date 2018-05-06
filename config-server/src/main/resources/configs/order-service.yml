@@ -1,0 +1,8 @@
+server:
+ port: 8082
+
+ 
+kafka:
+  producer:
+    bootstrap: localhost:9092
+    topic: orders

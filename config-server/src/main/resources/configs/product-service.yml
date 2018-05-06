@@ -1,0 +1,10 @@
+server:
+ port: 8083
+ 
+product:
+   default:
+     taxRatio: 18 
+ 
+
+
+ 

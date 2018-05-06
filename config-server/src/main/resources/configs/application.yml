@@ -1,0 +1,24 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true   
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411/  
+    enabled: true         
+
+ribbon: 
+     ConnectTimeout: 30000
+     ReadTimeout: 30000       
+ 
+management:
+  security:
+    enabled: false      
+    
+    
+    
+spring.zipkin.sender.type: web    

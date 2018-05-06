@@ -1,0 +1,10 @@
+
+docker-compose -f docker-compose-full.yml scale order-service=2
+
+
+
+docker stack deploy --compose-file docker-compose-full.yml cna
+
+docker stack services cna
+
+docker service scale cna_order-service=2
