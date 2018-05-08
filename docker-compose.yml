@@ -14,6 +14,8 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "orders:3:1"
+      
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   elasticsearch:
@@ -54,6 +56,7 @@ services:
         - 8888:8888
         environment:
             PROFILE: native
+            MEM_ARGS:   "-Xmx320m"     
             
   discovery-server:
         image: cna-discovery-server:v1
@@ -61,6 +64,7 @@ services:
         - 8761:8761
         environment:
             PROFILE: native
+            MEM_ARGS:   "-Xmx320m"     
             
   edge-gateway:
         image: cna-edge-gateway:v1
@@ -71,6 +75,7 @@ services:
         - 9999:9999
         environment:
             PROFILE: docker
+            MEM_ARGS:   "-Xmx320m"     
             
   customer-service:
         image: cna-customer-service:v1
@@ -79,6 +84,7 @@ services:
         - discovery-server
         environment:
             PROFILE: docker
+            MEM_ARGS:   "-Xmx320m"     
             
   order-service:
         image: cna-order-service:v1
@@ -87,6 +93,7 @@ services:
         - discovery-server
         - kafka
         environment:
+            MEM_ARGS:   "-Xmx320m"         
             PROFILE: docker 
 
   rating-service:
@@ -96,6 +103,7 @@ services:
         - discovery-server
         - kafka
         environment:
+            MEM_ARGS:   "-Xmx320m"         
             PROFILE: docker 
             
             
@@ -106,4 +114,5 @@ services:
         - discovery-server
         environment:
             PROFILE: docker 
+            MEM_ARGS:   "-Xmx320m"     
                                                          
