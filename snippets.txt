@@ -11,6 +11,24 @@ docker-compose -f docker-compose.yml scale order-service=2
 
 
 
+
+ab -p request.json -T application/json -c 10 -n 2000 http://localhost:9999/order-service/orders
+
+
+
+curl -X POST \
+  http://localhost:9999/order-service/orders \
+  -H 'Accept: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: febc8c40-7daa-40c4-9a21-7b6a09463ab9' \
+  -d '{
+  "productId": 5,
+  "customerId": 2,
+  "count": 3
+}'
+
+
 docker stack deploy --compose-file docker-compose.yml cna
 
 docker stack services cna
