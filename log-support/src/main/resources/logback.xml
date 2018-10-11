@@ -15,7 +15,7 @@
 			class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 			<keepAliveDuration>5 minutes</keepAliveDuration>
 			<reconnectionDelay>10 second</reconnectionDelay>
-			<waitStrategyType>sleeping</waitStrategyType>
+			<waitStrategyType>blocking</waitStrategyType>
 			<ringBufferSize>16384</ringBufferSize>
 			<destination>logstash:5000</destination>
 

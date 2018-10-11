@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
 
 
@@ -21,6 +21,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
     command: elasticsearch
+    mem_limit: "1024m"  
     ports:
      - "9200:9200"
      - "9300:9300"
@@ -45,6 +46,7 @@ services:
      
   zipkin:
     image: openzipkin/zipkin
+    mem_limit: "512m"  
     ports:
       - 9411:9411
       
