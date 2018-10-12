@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: admin-ui
+  cloud:
+    config:
+      uri: http://localhost:8888
+server:
+  port: 6789      
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-server:8888       
