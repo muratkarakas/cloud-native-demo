@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductServiceConfig {
 	private int taxRatio;
+	
+	private int minRatio;
 
 	public int getTaxRatio() {
 		return taxRatio;
@@ -14,5 +16,13 @@ public class ProductServiceConfig {
 
 	public void setTaxRatio(int taxRatio) {
 		this.taxRatio = taxRatio;
+	}
+
+	public int getMinRatio() {
+		return minRatio;
+	}
+
+	public void setMinRatio(int minRatio) {
+		this.minRatio = minRatio;
 	}
 }
