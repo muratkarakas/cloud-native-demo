@@ -102,7 +102,7 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.14</version>
+				<version>1.2.2</version>
 				<configuration>
 					<imageName>${docker.image.name}:${docker.image.tag}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
